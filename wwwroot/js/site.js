@@ -2,3 +2,12 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+const header = document.querySelector("header");
+
+function stickyNavbar() {
+    header.classList.toggle("scrolled", window.pageYOffset > 0);
+}
+
+stickyNavbar();
+
+window.addEventListener("scroll", stickyNavbar);
