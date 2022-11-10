@@ -218,6 +218,7 @@ header.scrolled .logo {
     padding: 120px 0;
     width: 100%;
     overflow: hidden;
+    position: relative;
 }
 
 .showcase-area .container{
@@ -310,4 +311,15 @@ header.scrolled .logo {
     bottom:0;
     left: 50%;
     transform: translateX(-50%);
+}
+
+.square{
+    width: 70px;
+}
+
+.showcase-area .square{
+    position: absolute;
+    left: 25%;
+    bottom: 120px;
+    transform: translate(-50%, -50%);
 }
