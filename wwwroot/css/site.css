@@ -323,3 +323,17 @@ header.scrolled .logo {
     bottom: 120px;
     transform: translate(-50%, -50%);
 }
+
+/******Skills Section ****************/
+
+.skills{
+    overflow: hidden;
+
+}
+
+.skills-box{
+    background-color: var(--bg-color-2);
+    padding: 5rem 6rem;
+    border-radius: 20px;
+    width: 100%;
+}
