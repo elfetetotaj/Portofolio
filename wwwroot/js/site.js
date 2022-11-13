@@ -8,7 +8,10 @@ const first_skill = document.querySelector(".skill:first-child");
 const sk_counters = document.querySelectorAll(".counter span");
 const progress_bars = document.querySelectorAll(".skills svg circle");
 
+const links = document.querySelectorAll(".nav-link");
+
 window.addEventListener("scroll", () => {
+    activeLink();
     if(!skillsPlayed) skillsCounter();
 });
 
@@ -73,3 +76,24 @@ function skillsCounter(){
         (p) => (p.style.animation = "progress 2s ease-in-out forwards")
     );
 }
+
+
+/**************Change Active Link on Scroll*********************/
+
+function activeLink(){
+    let sections = document.querySelectorAll("section[id]");
+    let passedSections = Array.from(sections).map((sct, i) =>{
+        return { 
+            y: sct.getBoundingClientRect().top - header.offsetHeight,
+            id: i, 
+        };
+    }).filter((sct) => sct.y <= 0);
+
+    let currSectionId = passedSections.at(-1).id;
+
+    links.forEach( l => l.classList.remove("active"));
+    links[currSectionId].classList.add("active");
+
+}
+
+activeLink();
